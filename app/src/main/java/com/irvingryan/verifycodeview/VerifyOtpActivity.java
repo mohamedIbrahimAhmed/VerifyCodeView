@@ -37,7 +37,7 @@ public class VerifyOtpActivity extends AppCompatActivity {
             }
         });
 
-        verifyCodeView.setVerificationCode("123456");
+        verifyCodeView.setVerificationCode("1234");
     }
 
     public void VerifyOtp(View view) {
