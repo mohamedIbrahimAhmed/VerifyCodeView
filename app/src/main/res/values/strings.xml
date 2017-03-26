@@ -4,5 +4,6 @@
     <string name="Verify">Verify</string>
     <string name="ResendOTP">RESEND OTP</string>
     <string name="sms_verify_code_not_this_number">RE-ENTER MOBILE NUMBER</string>
-    <string name="my_font">exljbris - Museo-300.otf</string>
+    <!--<string name="my_font">exljbris - Museo-300.otf</string>-->
+    <string name="my_font">Roboto-Bold.ttf</string>
 </resources>

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="VerifyCodeView">
+
+
+        <attr name="vcAllowAnimation" format="boolean" />
+
+        <attr name="vcTextSize" format="dimension|reference" />
         <attr name="vcTextColor" format="color|reference" />
-        <attr name="vcTextSize" format="integer" />
+        <attr name="vcLineColor" format="color|reference" />
+        <attr name="vcAnimation" format="reference" />
+        <attr name="vcCodeLength" format="integer" />
         <attr name="vcLineWidth" format="dimension" />
         <attr name="vcFont" format="string|reference" />
-        <attr name="vcLineStyle" >
+        <attr name="vcLineStyle">
             <enum name="noLine" value="0" />
             <enum name="underText" value="1" />
         </attr>

@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         app:vcLineWidth="@dimen/px_2.0_dp"
         app:vcTextColor="@color/colorAccent"
-        app:vcTextSize="6" />
+        app:vcCodeLength="6" />
 
     <TextView
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
         app:vcFont="@string/my_font"
         app:vcLineWidth="@dimen/px_2.0_dp"
         app:vcTextColor="@color/colorAccent"
-        app:vcTextSize="6" />
+        app:vcCodeLength="6" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,5 +61,5 @@
         app:vcLineWidth="@dimen/px_2.0_dp"
         app:vcTextColor="@color/colorAccent"
         app:vcLineStyle="underText"
-        app:vcTextSize="6" />
+        app:vcCodeLength="6" />
 </LinearLayout>
