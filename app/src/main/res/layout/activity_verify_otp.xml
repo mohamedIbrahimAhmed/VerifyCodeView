@@ -15,11 +15,6 @@
         android:layout_marginTop="@dimen/px_20.0_dp"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/px_74.0_dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/px_10.0_dp" />
 
         <TextView
             android:id="@+id/Tv_SentToNumber"
@@ -29,23 +24,20 @@
             android:text="@string/one_time_password_hint"
             android:textColor="@color/Color_ffffff" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/px_40.0_dp" />
-
+        
         <com.github.irvingryan.VerifyCodeView
             android:id="@+id/etOTP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            app:vcAllowAnimation="false"
+            app:vcAnimation="@anim/error_anim"
             app:vcCodeLength="4"
             app:vcFont="@string/my_font"
             app:vcLineColor="#0019fa"
             app:vcLineStyle="underText"
             app:vcLineWidth="@dimen/px_5.0_dp"
-            app:vcTextColor="@color/colorAccent"
-            app:vcRemoveWhenError="false"
-            app:vcTextSize="45sp" />
+            app:vcTextColor="@color/colorAccent" />
 
     </LinearLayout>
 
