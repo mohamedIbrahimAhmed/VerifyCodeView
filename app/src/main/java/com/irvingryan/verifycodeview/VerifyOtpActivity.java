@@ -41,15 +41,16 @@ public class VerifyOtpActivity extends AppCompatActivity {
     }
 
     public void VerifyOtp(View view) {
-
-        String s = verifyCodeView.getText();
-        if (s.equals("1234")) {
-            Toast.makeText(VerifyOtpActivity.this, "OTP is valid", Toast.LENGTH_SHORT).show();
-        } else {
-
-            verifyCodeView.animateInvalid();
-            verifyCodeView.clearText();
-//            Toast.makeText(VerifyOtpActivity.this,"OTP is invalid",Toast.LENGTH_SHORT).show();
-        }
+        verifyCodeView.validate("1234");
+//
+//        String s = verifyCodeView.getText();
+//        if (s.equals("1234")) {
+//            Toast.makeText(VerifyOtpActivity.this, "OTP is valid", Toast.LENGTH_SHORT).show();
+//        } else {
+//
+//            verifyCodeView.animateInvalid();
+//            verifyCodeView.clearText();
+////            Toast.makeText(VerifyOtpActivity.this,"OTP is invalid",Toast.LENGTH_SHORT).show();
+//        }
     }
 }

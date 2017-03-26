@@ -24,13 +24,13 @@
             android:text="@string/one_time_password_hint"
             android:textColor="@color/Color_ffffff" />
 
-        
+
         <com.github.irvingryan.VerifyCodeView
             android:id="@+id/etOTP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            app:vcAllowAnimation="false"
+            app:vcAllowAnimation="true"
             app:vcAnimation="@anim/error_anim"
             app:vcCodeLength="4"
             app:vcFont="@string/my_font"

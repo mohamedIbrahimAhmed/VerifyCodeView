@@ -341,6 +341,28 @@ public class VerifyCodeView extends View {
         this.mVerificationCode = code;
     }
 
+
+    public void validate(String codeToValidate) {
+        if (isEmpty(codeToValidate)) {
+            animateInvalid();
+            if (listener != null) listener.onVerificationFail();
+            return;
+        }
+
+
+        if (!codeToValidate.equalsIgnoreCase(codeBuilder.toString())) {
+            animateInvalid();
+            if (listener != null) listener.onVerificationFail();
+            return;
+        }
+
+
+        if (listener != null) listener.onVerificationSuccess();
+
+
+    }
+
+
     public void animateInvalid() {
         if (animation != null && vcAllowAnimation) startAnimation(animation);
     }
