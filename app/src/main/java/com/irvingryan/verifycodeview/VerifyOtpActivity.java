@@ -48,6 +48,7 @@ public class VerifyOtpActivity extends AppCompatActivity {
         } else {
 
             verifyCodeView.animateInvalid();
+            verifyCodeView.clearText();
 //            Toast.makeText(VerifyOtpActivity.this,"OTP is invalid",Toast.LENGTH_SHORT).show();
         }
     }

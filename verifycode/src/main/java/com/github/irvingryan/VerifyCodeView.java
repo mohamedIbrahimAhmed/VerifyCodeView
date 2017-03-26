@@ -49,6 +49,7 @@ public class VerifyCodeView extends View {
     private static final int DEFAULT_INPUT_TYPE = INPUT_NO_LINE;
     private static final int DEFAULT_ANIMATION = R.anim.invalid_input;
     private static final boolean DEFAULT_ALLOW_ANIMATION = true;
+    private static final boolean DEFAULT_REMOVE_WHEN_ERROR = false;
 
 
     private int mHeight;
@@ -60,23 +61,15 @@ public class VerifyCodeView extends View {
 
     private final Paint vcLinePaint;
     private final Paint vcTextPaint;
-
-
+    private final boolean vcRemoveWhenError;
     private VerificationListener listener;
-
     private final int vcTextColor;
     private final Typeface vcTypeface;
     private final int vcLineColor;
     private final boolean vcAllowAnimation;
-
-
     private int vcDefaultTextSize;
-
     private final int vcTextSize;
-
     private final Point[] solidPoints;
-
-
     private final Animation animation;
     private String mVerificationCode; // verification mVerificationCode to verify
 
@@ -103,7 +96,7 @@ public class VerifyCodeView extends View {
 
 
         if (attrs == null) {
-
+            vcRemoveWhenError = DEFAULT_REMOVE_WHEN_ERROR;
             vcBlankLineStroke = DEFAULT_BLANK_LINE_STROKE;
             vcLineColor = DEFAULT_TEXT_COLOR;
             vcTextColor = DEFAULT_TEXT_COLOR;
@@ -117,6 +110,8 @@ public class VerifyCodeView extends View {
         } else {
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.VerifyCodeView);
 
+
+            vcRemoveWhenError = typedArray.getBoolean(R.styleable.VerifyCodeView_vcRemoveWhenError, DEFAULT_REMOVE_WHEN_ERROR);
             vcTextSize = typedArray.getDimensionPixelSize(R.styleable.VerifyCodeView_vcTextSize, 0);
             vcAllowAnimation = typedArray.getBoolean(R.styleable.VerifyCodeView_vcAllowAnimation, DEFAULT_ALLOW_ANIMATION);
 
@@ -216,6 +211,10 @@ public class VerifyCodeView extends View {
                 } else {
                     animateInvalid();
                     if (listener != null) listener.onVerificationFail();
+
+                    if (vcRemoveWhenError) {
+                        clearText();
+                    }
                 }
 
 
@@ -225,6 +224,13 @@ public class VerifyCodeView extends View {
 
         return super.onKeyDown(keyCode, event);
     }
+
+
+    public void clearText() {
+        codeBuilder.setLength(0);
+        invalidate();
+    }
+
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {

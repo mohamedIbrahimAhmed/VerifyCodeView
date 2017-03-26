@@ -44,6 +44,7 @@
             app:vcLineStyle="underText"
             app:vcLineWidth="@dimen/px_5.0_dp"
             app:vcTextColor="@color/colorAccent"
+            app:vcRemoveWhenError="false"
             app:vcTextSize="45sp" />
 
     </LinearLayout>

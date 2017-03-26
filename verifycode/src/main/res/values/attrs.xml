@@ -4,7 +4,7 @@
 
 
         <attr name="vcAllowAnimation" format="boolean" />
-
+        <attr name="vcRemoveWhenError" format="boolean" />
         <attr name="vcTextSize" format="dimension|reference" />
         <attr name="vcTextColor" format="color|reference" />
         <attr name="vcLineColor" format="color|reference" />
